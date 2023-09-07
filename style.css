@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px;
+  background: #a1ffce; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+img {
+  max-width: 100%;
+}
+
+.mobile-container {
+  background-color: #fff;
+  width: 400px;
+  box-shadow: 0 0 10px 2px #84777755;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+header input {
+  background-color: #efefef;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+header button {
+  background-color: transparent;
+  color: #5e5e5e;
+  font-size: 2rem;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.fav-container {
+  background-color: #e3cbe3;
+  padding: 0.25rem 1rem;
+  text-align: center;
+}
+
+.fav-meals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.fav-meals li {
+  width: 85px;
+  margin: 2px;
+}
+
+.fav-meals li img {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px 2px #84777755;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.fav-meals li span {
+  font-size: 0.8rem;
+}
+
+.meal {
+  box-shadow: 0 0 10px 2px #84777755;
+  border-radius: 3px;
+  margin: 1.5rem;
+}
+
+.meal-header {
+  position: relative;
+}
+
+.meal-header .random {
+  position: absolute;
+  top: 10px;
+  background-color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.meal-header img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.meal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.meal-body h4 {
+  margin: 0;
+}
+
+.meal-body .fav-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: gray;
+}
+
+.meal-body .fav-btn.active {
+  color: rebeccapurple;
+}
