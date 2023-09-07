@@ -134,6 +134,7 @@ header button {
   font-size: 1.25rem;
   cursor: pointer;
   color: gray;
+  transition: color 70ms ease-in;
 }
 
 .meal-body .fav-btn.active {
