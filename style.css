@@ -30,7 +30,7 @@ img {
 
 .mobile-container {
   background-color: #fff;
-  width: 400px;
+  width: 450px;
   box-shadow: 0 0 10px 2px #84777755;
   border-radius: 5px;
   overflow: hidden;
@@ -45,7 +45,7 @@ header {
 
 header input {
   background-color: #efefef;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3.5rem;
   border: none;
   border-radius: 6px;
   font-family: inherit;
@@ -58,6 +58,7 @@ header button {
   border: none;
   margin-left: 10px;
   cursor: pointer;
+  position: ab;
 }
 
 .fav-container {
@@ -107,6 +108,7 @@ header button {
   box-shadow: 0 0 10px 2px #84777755;
   border-radius: 3px;
   margin: 1.5rem;
+  transition: opacity 0.2s ease-in;
 }
 
 .meal-header {

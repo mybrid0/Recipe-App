@@ -5,6 +5,7 @@ const searchTerm = document.getElementById("search-term");
 const mealPopup = document.getElementById("popup");
 const popupCloseBtn = document.getElementById("close-popup");
 const mealInfoEl = document.getElementById("meal-info");
+const reloadBtn = document.getElementById("reload");
 
 getRandomMeal();
 fetchFavMeals();
@@ -59,6 +60,7 @@ function addMeal(mealData, random = false) {
     </div>
   </div>
   `;
+  meal.classList.add("fade-in");
   const btn = meal.querySelector(".meal-body .fav-btn");
   btn.addEventListener("click", (e) => {
     if (btn.classList.contains("active")) {
@@ -204,4 +206,8 @@ searchBtn.addEventListener("click", async () => {
 
 popupCloseBtn.addEventListener("click", () => {
   mealPopup.classList.add("hidden");
+});
+
+reloadBtn.addEventListener("click", () => {
+  location.reload();
 });
