@@ -184,8 +184,11 @@ header button {
   max-width: 600px;
   width: 100%;
   background-color: #fff;
+  max-height: 100vh;
   padding: 0 2rem;
-  border: 5px;
+  border-radius: 5px;
+  overflow: auto;
+  margin: 2rem;
   position: relative;
 }
 
