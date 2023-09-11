@@ -77,6 +77,8 @@ function addMeal(mealData, random = false) {
     showMealInfo(mealData);
   });
 
+  console.log(mealData);
+
   mealsEl.appendChild(meal);
 }
 
@@ -147,6 +149,28 @@ function showMealInfo(mealData) {
   mealInfoEl.innerHTML = "";
   const mealEl = document.createElement("div");
 
+  const mealIngEl = document.createElement("ul");
+
+  const ingredientArr = [];
+
+  const measurementArr = [];
+
+  for (let key in mealData) {
+    for (let i = 0; i < Object.keys(mealData).length; i++) {
+      if (key === `strIngredient${i}` && mealData[key]) {
+        ingredientArr.push(mealData[key]);
+      } else if (key === `strMeasure${i}` && mealData[key]) {
+        measurementArr.push(mealData[key]);
+      }
+    }
+  }
+
+  ingredientArr.forEach((ing) => {
+    const listEl = document.createElement("li");
+    listEl.innerHTML = `${ing} - ${measurementArr[ingredientArr.indexOf(ing)]}`;
+    mealIngEl.appendChild(listEl);
+  });
+
   mealEl.innerHTML = `<h1>${mealData.strMeal}</h1>
   <img
     src="${mealData.strMealThumb}"
@@ -156,10 +180,13 @@ function showMealInfo(mealData) {
     <p>
       ${mealData.strInstructions}
     </p>
+    <
+    
     
   </div>`;
 
   mealInfoEl.appendChild(mealEl);
+  mealInfoEl.appendChild(mealIngEl);
 
   mealPopup.classList.remove("hidden");
 }
