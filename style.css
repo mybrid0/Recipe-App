@@ -69,7 +69,6 @@ header button {
 .fav-meals {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   list-style-type: none;
   padding: 0;
@@ -78,6 +77,7 @@ header button {
 .fav-meals li {
   width: 85px;
   margin: 2px;
+  position: relative;
 }
 
 .fav-meals li img {
@@ -87,9 +87,20 @@ header button {
   width: 70px;
   object-fit: cover;
   border-radius: 50%;
+  cursor: pointer;
 }
 .fav-meals li span {
+  display: inline-block;
   font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 75px;
+}
+
+.fav-meals li:hover span {
+  white-space: normal;
+  overflow: auto;
 }
 
 .meal {
@@ -139,4 +150,60 @@ header button {
 
 .meal-body .fav-btn.active {
   color: rebeccapurple;
+}
+
+.clear-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: -0.4rem;
+  right: -0.2rem;
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.fav-meals li:hover .clear-btn {
+  opacity: 1;
+}
+
+.popup-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.popup {
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 2rem;
+  border: 5px;
+  position: relative;
+}
+
+.meal-info h1 {
+  text-align: center;
+}
+
+.popup .close-popup {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.popup-container.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
